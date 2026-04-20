@@ -5,7 +5,7 @@ from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
 # 1. Chargement des données
-df = pd.read_csv("supermarket_sales.csv")
+df = pd.read_csv("vente_supermarché.csv")
 
 villes = df["City"].unique()
 sexes = df["Gender"].unique()
@@ -79,7 +79,7 @@ TITLE_STYLE = {
 
 # 3. Création de l'application
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-server = app.serveur
+server = app.server
 
 # 4. Interface du tableau de bord (Layout)
 app.layout = html.Div([
@@ -201,4 +201,4 @@ def update_dashboard(selected_gender, selected_city):
 
 # 6. Lancement du serveur
 if __name__ == '__main__':
-    app.run(debug=True, port=8050, jupyter_mode='external')
+    app.run(debug=True, port=8050)
