@@ -158,7 +158,7 @@ def update_dashboard(selected_gender, selected_city):
     # --- GRAPHIQUES ---
     dff['Date'] = pd.to_datetime(dff['Date'])
     
-    # 1. Évolution dans le temps 
+    # 1. Évolution des achats dans le temps 
     evol_dans_le_temps = dff.groupby('Date')['Total'].sum().reset_index().sort_values('Date')
     fig_ligne = px.line(
         evol_dans_le_temps, x='Date', y='Total', 
@@ -181,7 +181,7 @@ def update_dashboard(selected_gender, selected_city):
     fig_bar = px.bar(
         achats_par_produit, x="Product line", y="Invoice ID", 
         title="<b>Nombre total d'achats par catégorie</b>", 
-        labels={"Product line": "Product Category", "Invoice ID": "Number of Purchases"},
+        labels={"Product line": "Catégorie de Produit", "Invoice ID": "Nombre d'achat"},
         color_discrete_sequence=[COLORS["secondary"]]
     )
 
