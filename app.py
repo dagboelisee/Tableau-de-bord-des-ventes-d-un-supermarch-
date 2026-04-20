@@ -5,7 +5,7 @@ from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
 # 1. Chargement des données
-df = pd.read_csv("vente_supermarché.csv")
+df = pd.read_csv("supermarket_sales.csv")
 
 villes = df["City"].unique()
 sexes = df["Gender"].unique()
